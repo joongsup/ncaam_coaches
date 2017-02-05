@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "\ngrab_records <- function(src){\n  \n  coach <- src[[\"URL\"]] %>% read_html() %>% html_nodes(xpath = src[[\"Table\"]]) %>% html_table(fill = TRUE)\n  records <- coach[[1]]$Overall\n  year <- coach[[1]]$Season\n  df_coach <- tibble(year, records)\n  df_coach <- df_coach %>% filter(nchar(records) < 6)\n  df_coach <- df_coach %>% separate(records, c(\"win\", \"loss\"), convert = TRUE)\n  df_coach <- df_coach %>% mutate(win_cum = cumsum(win), career_yr = row_number())\n  \n  df_coach\n}",
+    "created" : 1486136448518.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2801794642",
+    "id" : "4F786E09",
+    "lastKnownWriteTime" : 1486146376,
+    "last_content_update" : 1486146376610,
+    "path" : "~/projects/coaches/utils.R",
+    "project_path" : "utils.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

@@ -1,0 +1,9 @@
+{
+    "path" : "~/projects/coaches",
+    "sortOrder" : [
+        {
+            "ascending" : true,
+            "columnIndex" : 2
+        }
+    ]
+}

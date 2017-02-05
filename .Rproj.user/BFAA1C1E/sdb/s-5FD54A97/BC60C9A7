@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "install.packages(\"rvest\")\nurl <- \"https://en.wikipedia.org/wiki/Roy_Williams_(coach)#Head_coaching_record\"\n\nlibrary(tidyverse)\nlibrary(rvest)\n\nrw <- url %>% read_html() %>% \n  html_nodes(xpath = \"//*[@id=\\\"mw-content-text\\\"]/table[3]\") %>% html_table(fill = TRUE)\n\nrw_records <- rw[[1]]$Overall\nrw_year <- rw[[1]]$Season\ndf_rw <- tibble(rw_year, rw_records)\ndf_rw <- df_rw %>% filter(nchar(rw_records) < 6)\ndf_rw <- df_rw %>% separate(rw_records, c(\"win\", \"loss\"), convert = TRUE)\ndf_rw <- df_rw %>% mutate(win_cum = cumsum(win), career_yr = row_number())\n\ndf_rw %>% ggplot(aes(x = career_yr, y = win_cum)) + geom_point()\n\nsrc <- read.csv(\"input_data_table.csv\", header = TRUE, as.is = TRUE, quote = \"\")\ncoach <- src[2, \"URL\"] %>% read_html() %>% html_nodes(xpath = src[2, \"Table\"]) %>% html_table(fill = TRUE)\nrecords <- coach[[1]]$Overall\nyear <- coach[[1]]$Season\ndf_coach <- tibble(year, records)\ndf_coach <- df_coach %>% filter(nchar(records) < 6)\ndf_coach <- df_coach %>% separate(records, c(\"win\", \"loss\"), convert = TRUE)\ndf_coach <- df_coach %>% mutate(win_cum = cumsum(win), career_yr = row_number())\n\nsrc$career_records <- apply(src, 1, grab_records)\n\ncoaches <- read.csv(\"input_data_table.csv\", header = TRUE, as.is = TRUE, quote = \"\")\ncoaches$career_records <- apply(coaches, 1, grab_records)\ncoaches$latest_win_total <- \n  \nmap_int(coaches$carrer_records, win_cum)\n",
+    "created" : 1486134762674.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2877864819",
+    "id" : "BC60C9A7",
+    "lastKnownWriteTime" : 1486155240,
+    "last_content_update" : 1486155240371,
+    "path" : "~/projects/coaches/scratch.R",
+    "project_path" : "scratch.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

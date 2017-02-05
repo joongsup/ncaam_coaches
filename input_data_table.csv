@@ -1,0 +1,13 @@
+﻿Number,Coach,URL,Table
+1,Roy Williams,https://en.wikipedia.org/wiki/Roy_Williams_(coach)#Head_coaching_record,//*[@id="mw-content-text"]/table[3]
+2,Coach K,https://en.wikipedia.org/wiki/Mike_Krzyzewski,//*[@id="mw-content-text"]/table[2]
+3,Bob Knight,https://en.wikipedia.org/wiki/Bob_Knight,//*[@id="mw-content-text"]/table[2]
+4,John Calipari,https://en.wikipedia.org/wiki/John_Calipari,//*[@id="mw-content-text"]/table[3]
+5,Dean Smith,https://en.wikipedia.org/wiki/Dean_Smith,//*[@id="mw-content-text"]/table[2]
+6,Jim Hoeheim,https://en.wikipedia.org/wiki/Jim_Boeheim,//*[@id="mw-content-text"]/table[2]
+7,Adolph Rupp,https://en.wikipedia.org/wiki/Adolph_Rupp,//*[@id="mw-content-text"]/table[3]
+8,Jim Calhoun,https://en.wikipedia.org/wiki/Jim_Calhoun,//*[@id="mw-content-text"]/table[2]
+9,Lute Olson,https://en.wikipedia.org/wiki/Lute_Olson,//*[@id="mw-content-text"]/table[3]
+10,Pat Summitt,https://en.wikipedia.org/wiki/Pat_Summitt,//*[@id="mw-content-text"]/table[5]
+
+

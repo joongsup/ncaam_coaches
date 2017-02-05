@@ -14,4 +14,4 @@ Trouble with git?
 -----------------
 
 -   for files that don't need to be tracked, add them to .gitignore
--   if already pushed to remote repo, run the following and push as outlined here (<https://github.com/STAT545-UBC/Discussion/issues/122>): git rm --cached <filename goes here>
+-   if already pushed to remote repo, run the following and push as outlined here (<https://github.com/STAT545-UBC/Discussion/issues/122>): git rm --cached file\_name
